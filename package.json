@@ -1,0 +1,12 @@
+{
+  "name": "sandboxes",
+  "version": "1.0.0",
+  "description": "[Node.js Repo Based Sandbox](https://github.com/pallabcodes/sandboxes/tree/node-repo-based-sandbox)\r [Node.js Repo Based Sandbox](https://github.com/pallabcodes/sandboxes/tree/node-feature-based-sandbox)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["Node", "feature-based-folder-structure"],
+  "author": "Pallab Kayal",
+  "license": "ISC"
+}
