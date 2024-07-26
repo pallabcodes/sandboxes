@@ -1,0 +1,58 @@
+{
+  "env": {
+    "es2021": true, // Supports ECMAScript 2021 features
+    "node": true // Node.js global variables and Node.js scoping
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:node/recommended", // Best practices for Node.js
+    "plugin:promise/recommended", // Best practices for Promises
+    "plugin:prettier/recommended", // Enables prettier as an ESLint rule
+    "prettier" // Disables ESLint rules that conflict with Prettier
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest", // Enables the latest ECMAScript syntax
+    "sourceType": "module" // Enables ECMAScript modules
+  },
+  "rules": {
+    "prettier/prettier": "error", // Treats prettier issues as errors
+    "no-console": "warn", // Warns on console statements (can change to "off" in dev)
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "node/no-unpublished-require": "off", // Allows requiring dev dependencies
+    "node/no-missing-require": "error", // Ensures modules are available
+    "node/no-unsupported-features/es-syntax": [
+      "error",
+      {
+        "ignores": ["modules"]
+      }
+    ],
+    "node/no-extraneous-require": "error", // Ensures only listed dependencies are required
+    "node/no-deprecated-api": "warn", // Warns on deprecated Node.js APIs
+    "promise/always-return": "warn", // Warns if Promises don't return
+    "promise/no-return-wrap": "error", // Ensures promises don't return wrapped values
+    "promise/catch-or-return": "warn", // Ensures Promises have a catch or return
+    "promise/no-nesting": "warn", // Warns on nesting Promises
+    "promise/no-promise-in-callback": "warn", // Warns on Promises inside callbacks
+    "promise/no-callback-in-promise": "warn", // Warns on callbacks inside Promises
+    "promise/avoid-new": "warn", // Warns on creating new Promises unnecessarily
+    "simple-import-sort/imports": "error", // Ensures imports are sorted
+    "simple-import-sort/exports": "error" // Ensures exports are sorted
+  },
+  "ignorePatterns": [
+    "dist", // Ignores build output
+    "coverage", // Ignores coverage reports
+    "**/node_modules/**", // Ignores node_modules folder
+    "db/migrations/migrate/*.js",
+    "db/migrations/seed/*.js",
+    "package.json",
+    "package-lock.json",
+    "bin"
+  ]
+}
